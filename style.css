@@ -1,11 +1,120 @@
+:root {
+  --background: #080808;
+  --secondary: #64ffda;
+  --secondary-pink: #ff004f;
+  --primary-text: #fff;
+  --secondary-text: #8fa89d;
+}
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono",
+    "Lucida Console", Monaco, monospace;
   box-sizing: border-box;
 }
 
 body {
-  background-color: #080808;
-  color: #fff;
+  background-color: var(--background);
+  color: var(--primary-text);
+}
+
+.container {
+  padding: 10px 8%;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: var(--primary-text);
+  text-decoration: none;
+  font-size: 18px;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: var(--secondary);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+button {
+  color: var(--secondary);
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+  border-radius: 3px;
+  padding: 10px 1rem;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+button:hover {
+  background-color: var(--secondary-text);
+}
+
+.header-text {
+  margin-top: 12%;
+}
+
+.header-text p {
+  color: var(--secondary);
+  font-size: 24px;
+}
+
+.header-text h1 {
+  font-size: 60px;
+  margin-top: 24px;
+}
+
+.header-text h2 {
+  font-size: 48px;
+  color: var(--secondary-text);
+  letter-spacing: 1.8px;
+  margin-top: 40px;
+}
+
+.header-about-self {
+  max-width: 500px;
+  width: 50%;
+  margin-top: 64px;
+}
+
+.header-about-self a {
+  color: var(--secondary);
+  background-color: transparent;
+  border: 1px solid var(--secondary);
+  border-radius: 3px;
+  padding: 1.25rem 1.75rem;
+  font-size: 14px;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+}
+
+.header-about-self a:hover {
+  background-color: var(--secondary-text);
 }
