@@ -11,12 +11,25 @@
     <div id="header">
       <div class="container">
         <nav>
-          <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">Projects</a></li>
-            <li><a href="">Contact Me</a></li>
-            <li><button class="btn">Resume</button></li>
+          <ul id="side-menu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+
+            <li class="nav-icon" onclick="closeMenu()">
+              <img src="images/close.svg" />
+            </li>
+            <li>
+              <a
+                class="btn"
+                href="https://drive.google.com/file/d/1UKTbH8LwY0r5GHpGMf-k6fTjfqLXmq3_/view?usp=sharing"
+                target="_blank"
+                >Resume</a
+              >
+            </li>
           </ul>
+
+          <img src="images/menu.svg" onclick="openMenu()" class="nav-icon" />
         </nav>
         <div class="header-text">
           <p>Hello, my name is</p>
@@ -24,7 +37,9 @@
           <h2>&bull;Curiosity &bull;Discipline &bull;Honesty</h2>
 
           <div class="header-about-self">
-            <a class="btn">Get in touch</a>
+            <a class="btn" href="mailto:giri.gyanashree347@gmail.com"
+              >Get in touch</a
+            >
           </div>
         </div>
       </div>
@@ -35,20 +50,28 @@
     <div class="contact-links">
       <ul>
         <li>
-          <a href=""><img src="images/github.svg" class="link-img" /></a>
+          <a href="https://github.com/GGi347" target="_blank"
+            ><img src="images/github.svg" class="link-img"
+          /></a>
         </li>
         <li>
-          <a href=""><img src="images/email.svg" class="link-img" /></a>
+          <a href=""
+            ><img src="images/email.svg" class="link-img" target="_blank"
+          /></a>
         </li>
         <li>
-          <a href=""><img src="images/linkedin.svg" class="link-img" /></a>
+          <a
+            href="https://np.linkedin.com/in/gyanashree-giri-3716821b2"
+            target="_blank"
+            ><img src="images/linkedin.svg" class="link-img"
+          /></a>
         </li>
       </ul>
     </div>
     <!-- ------Projects-------------- -->
     <div id="projects">
       <div class="container section">
-        <h1 class="sub-heading">My work</h1>
+        <h1 class="sub-heading">Recent Projects</h1>
         <div class="project-list">
           <div class="project">
             <div class="project-img">
@@ -56,22 +79,25 @@
             </div>
 
             <div class="project-description">
-              <h2>Auction</h2>
+              <h2>Observe</h2>
               <div>
                 <p>
-                  An e-commerce website that allows users to post auction
-                  listings, place bids on listings, comment on those listings,
-                  and add listings to a “watchlist.
+                  A habit tracking website. Any number of habits can be tracked
+                  and observed on beautiful graphs throughout the years.
                 </p>
               </div>
 
               <ul>
-                <li>Django</li>
-                <li>SQLite</li>
+                <li>Django Rest</li>
+                <li>PostgreSQL</li>
+                <li>React</li>
+                <li>React Query</li>
+                <li>Redux</li>
+                <li>Chart.js</li>
               </ul>
               <ul>
                 <li>
-                  <a href=""
+                  <a href="https://github.com/GGi347/observe" target="_blank"
                     ><img src="images/github.svg" class="link-img"
                   /></a>
                   <a href=""><img src="images/link.svg" class="link-img" /></a>
@@ -107,7 +133,7 @@
               </ul>
               <ul>
                 <li>
-                  <a href=""
+                  <a href="https://github.com/GGi347/Battleship" target="_blank"
                     ><img src="images/github.svg" class="link-img"
                   /></a>
                   <a href=""><img src="images/link.svg" class="link-img" /></a>
@@ -136,7 +162,7 @@
               </ul>
               <ul>
                 <li>
-                  <a href=""
+                  <a href="https://github.com/GGi347/E-commerce" target="_blank"
                     ><img src="images/github.svg" class="link-img"
                   /></a>
                   <a href=""><img src="images/link.svg" class="link-img" /></a>
@@ -159,11 +185,19 @@
           cool collaborations or work opportunities. <br />If you have some
           feedback on my projects, I would love to hear them too.
         </p>
-        <button class="btn">Mail</button>
+        <a class="btn" href="mailto:giri.gyanashree347@gmail.com">Mail</a>
       </div>
     </div>
     <script>
-      var tablinks = document.getElementsByClassName("tab");
+      var sideMenu = document.getElementById("side-menu");
+
+      function openMenu() {
+        sideMenu.style.right = "0";
+      }
+
+      function closeMenu() {
+        sideMenu.style.right = "-160px";
+      }
     </script>
   </body>
 </html>

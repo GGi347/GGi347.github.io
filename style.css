@@ -6,7 +6,9 @@
   --primary-text: #fff;
   --secondary-text: #8fa89d;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 * {
   margin: 0;
   padding: 0;
@@ -59,7 +61,8 @@ nav ul li a:hover::after {
   width: 100%;
 }
 
-button {
+button,
+.btn {
   color: var(--secondary);
   background-color: transparent;
   border: 1px solid var(--secondary);
@@ -72,7 +75,8 @@ button {
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
 }
 
-button:hover {
+button:hover,
+.btn:hover {
   background-color: var(--secondary-text);
 }
 
@@ -134,16 +138,26 @@ button:hover {
   margin-top: 100px;
 }
 
+.sub-heading {
+  color: var(--secondary-text);
+}
+
+.sub-heading::after {
+  content: "";
+  background-color: var(--secondary-text);
+  display: block;
+  width: 200px;
+  height: 0.2px;
+  margin-left: 320px;
+  position: relative;
+  top: -12px;
+}
+
 .project-list {
   display: flex;
   flex-direction: column;
   row-gap: 160px;
-  margin-top: 100px;
 }
-
-/* .sub-heading {
-  margin-bottom: 160px;
-} */
 
 .project {
   display: grid;
@@ -196,15 +210,15 @@ button:hover {
 
 /* contact */
 .contact-section {
-  padding: 150px 0px;
+  padding: 120px 0px;
   text-align: center;
   max-width: 600px;
   margin: 0px auto 160px;
 }
 
-.contact-section button,
 .contact-section p {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 /* contact links */
@@ -227,7 +241,85 @@ button:hover {
   background-color: rgb(168, 178, 209);
 }
 
-/* .contact-link-img {
+.nav-icon {
   filter: invert(81%) sepia(58%) saturate(395%) hue-rotate(97deg)
     brightness(104%) contrast(103%);
-} */
+  width: 20px;
+  display: none;
+}
+
+/* css for small screens */
+@media only screen and (max-width: 650px) {
+  .header-text h1 {
+    font-size: 30px;
+  }
+  .header-text h2 {
+    font-size: 24px;
+  }
+
+  .header-about-self a {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .nav-icon {
+    display: block;
+  }
+
+  nav ul {
+    background-color: var(--secondary-background);
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 160px;
+    z-index: 2;
+    height: 100vh;
+    padding-top: 50px;
+    transition: right 0.5s;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 25px;
+  }
+
+  nav ul .nav-icon {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .project-list {
+    margin-top: 120px;
+  }
+  .sub-heading::after {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .project {
+    display: flex;
+    flex-direction: column-reverse;
+    transform: rotate();
+  }
+
+  .project-img {
+    padding-top: 20px;
+  }
+
+  .project-description {
+    text-align: start;
+  }
+
+  .contact-section {
+    padding: 10px 50px;
+  }
+
+  .sub-heading::after {
+    width: 100px;
+  }
+}
