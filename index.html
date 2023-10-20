@@ -29,7 +29,11 @@
             </li>
           </ul>
 
-          <img src="images/menu.svg" onclick="openMenu()" class="nav-icon" />
+          <img
+            src="images/menu.svg"
+            onclick="openMenu()"
+            class="nav-icon menu-icon"
+          />
         </nav>
         <div class="header-text">
           <p>Hello, my name is</p>
@@ -192,11 +196,11 @@
       var sideMenu = document.getElementById("side-menu");
 
       function openMenu() {
-        sideMenu.style.right = "0";
+        sideMenu.style.display = "block";
       }
 
       function closeMenu() {
-        sideMenu.style.right = "-160px";
+        sideMenu.style.display = "none";
       }
     </script>
   </body>
