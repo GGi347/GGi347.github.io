@@ -1,5 +1,6 @@
 :root {
   --background: #080808;
+  --secondary-background: #172a45;
   --secondary: #64ffda;
   --secondary-pink: #ff004f;
   --primary-text: #fff;
@@ -30,13 +31,13 @@ nav {
   flex-wrap: wrap;
 }
 
-nav ul li {
+ul li {
   display: inline-block;
   list-style: none;
   margin: 10px 20px;
 }
 
-nav ul li a {
+ul li a {
   color: var(--primary-text);
   text-decoration: none;
   font-size: 18px;
@@ -118,3 +119,115 @@ button:hover {
 .header-about-self a:hover {
   background-color: var(--secondary-text);
 }
+
+/* projects */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  row-gap: 80px;
+}
+
+#projects {
+  padding: 50px;
+  margin: 100px 0;
+  margin-top: 100px;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: 160px;
+  margin-top: 100px;
+}
+
+/* .sub-heading {
+  margin-bottom: 160px;
+} */
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  align-items: center;
+}
+.project-description {
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  position: relative;
+  grid-area: 1 / 7 / span 2/ -1;
+  z-index: 2;
+}
+
+.project-img {
+  position: relative;
+  z-index: 1;
+  grid-area: 1 / 1 / 1 / 8;
+  padding-top: 60px;
+}
+
+.project-description div {
+  box-shadow: rgba(2, 12, 27, 0.7) 0px 10px 30px -15px;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  position: relative;
+  z-index: 2;
+  padding: 25px 25px 25px 60px;
+  background-color: var(--secondary-background);
+  color: rgb(168, 178, 209);
+  font-size: 18px;
+  border-radius: 3px;
+  position: relative;
+  z-index: 2;
+  margin-top: 36px;
+}
+
+.project-img img,
+.project-img video {
+  width: 100%;
+}
+
+.link-img {
+  width: 30px;
+  filter: invert(100%) sepia(93%) saturate(1%) hue-rotate(60deg)
+    brightness(107%) contrast(101%);
+  margin: 0 10px;
+}
+
+/* contact */
+.contact-section {
+  padding: 150px 0px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0px auto 160px;
+}
+
+.contact-section button,
+.contact-section p {
+  margin-top: 20px;
+}
+
+/* contact links */
+.contact-links {
+  width: 24px;
+  position: fixed;
+  bottom: 0px;
+  right: 50px;
+  z-index: 10;
+  filter: invert(81%) sepia(58%) saturate(395%) hue-rotate(97deg)
+    brightness(104%) contrast(103%);
+}
+
+.contact-links ul::after {
+  content: "";
+  display: block;
+  width: 1px;
+  height: 90px;
+  margin: 0px 50px;
+  background-color: rgb(168, 178, 209);
+}
+
+/* .contact-link-img {
+  filter: invert(81%) sepia(58%) saturate(395%) hue-rotate(97deg)
+    brightness(104%) contrast(103%);
+} */
